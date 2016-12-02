@@ -1,0 +1,152 @@
+/*Arvore Genealogica*/
+homem(julio).
+homem(antonio).
+homem(joao).
+homem(gedeao).
+homem(dihel).
+homem(gildasio).
+homem(louro).
+homem(marco).
+mulher(marleide).
+mulher(maria).
+mulher(maria-jose).
+mulher(gilda).
+mulher(glace).
+mulher(delly).
+mulher(dariany).
+mulher(anne).
+mulher(aglae).
+mulher(juliana).
+mulher(gleide).
+mulher(gleyce).
+genitor(julio,glace).
+genitor(julio,gedeao).
+genitor(julio,gilda).
+genitor(julio,gildasio).
+genitor(julio,gleide).
+genitor(maria,gilda).
+genitor(maria,gedeao).
+genitor(maria,glace).
+genitor(maria,gildasio).
+genitor(maria,gleide).
+genitor(gedeao,anne).
+genitor(marleide,anne).
+genitor(gedeao,aglae).
+genitor(marleide,aglae).
+genitor(gedeao,juliana).
+genitor(marleide,juliana).
+genitor(glace,delly).
+genitor(glace,dihel).
+genitor(glace,dariany).
+genitor(antonio,joao).
+genitor(maria-jose,joao).
+genitor(joao,delly).
+genitor(joao,dihel).
+genitor(joao,dariany).
+genitor(louro,gleyce).
+genitor(louro,marco).
+genitor(gleide,gleyce).
+genitor(gleide,marco).
+casado(louro,gleide).
+casado(gleide,louro).
+casado(marleide,gedeao).
+casado(gedeao,marleide).
+casado(julio,maria).
+casado(maria,julio).
+casado(antonio,maaria-jose).
+casado(maria-jose,antonio).
+casado(glace,joao).
+casado(joao,glace).
+
+pai(X,Y):-
+    homem(X),
+    genitor(X,Y).
+mae(X,Y):-
+    mulher(X),
+    genitor(X,Y).
+filho(X,Y):-
+    homem(X),
+    genitor(Y,X).
+filha(X,Y):-
+    mulher(X),
+    genitor(Y,X).
+irmao(X,Y):-
+    homem(X),
+    genitor(Z,X),
+    genitor(Z,Y),
+    not(X = Y).
+irma(X,Y):-
+    mulher(X),
+    genitor(Z,X),
+    genitor(Z,Y),
+    not(X = Y).
+avoo(X,Y):-
+    homem(X),
+    genitor(Z,Y),
+    genitor(X,Z).
+avoa(X,Y):-
+    mulher(X),
+    genitor(Z,Y),
+    genitor(X,Z).
+neto(X,Y):-
+    homem(X),
+    genitor(Y,Z),
+    genitor(Z,X).
+neta(X,Y):-
+    mulher(X),
+    genitor(Y,Z),
+    genitor(Z,X).
+tio(X,Y):-
+    homem(X),
+    irmao(X,Z),
+    genitor(Z,Y).
+tio(X,Y):-
+    homem(X),
+    casado(X,Z),
+    irma(Z,W),
+    genitor(W,Y).
+tia(X,Y):-
+    mulher(X),
+    irma(X,Z),
+    genitor(Z,Y).
+tia(X,Y):-
+    mulher(X),
+    casado(X,Z),
+    irmao(Z,W),
+    genitor(W,Y).
+sobrinho(X,Y):-
+    homem(X),
+    genitor(Z,X),
+    genitor(W,Z),
+    genitor(W,Y).
+sobrinho(X,Y):-
+    homem(X),
+    genitor(Z,X),
+    genitor(W,Z),
+    genitor(W,V),
+    casado(V,Y).
+sobrinha(X,Y):-
+    mulher(X),
+    genitor(Z,X),
+    genitor(W,Z),
+    genitor(W,Y).
+sobrinha(X,Y):-
+    mulher(X),
+    genitor(Z,X),
+    genitor(W,Z),
+    genitor(W,V),
+    casado(V,Y).
+primo(X,Y):-
+    homem(X),
+    genitor(Z,X),
+    genitor(V,Z),
+    genitor(V,W),
+    genitor(W,Y),
+    not(Z = W).
+prima(X,Y):-
+    mulher(X),
+    genitor(Z,X),
+    genitor(V,Z),
+    genitor(V,W),
+    genitor(W,Y),
+    not(Z = W).
