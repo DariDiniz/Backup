@@ -1,0 +1,100 @@
+Teste de Ou Exclusivo Usando a Tabela Verdade (TV)
+Nome: Dariany Diniz
+Data: 13/09/2016
+
+- Dada as formulas
+     A: p -> (q ^ r)
+     B: ¬ (q ^ r) -> ¬p
+
+     Verifique que A => B por tabela verdade (TV)
+
+   |-------------------------------------------------------------|
+   |   |   |   |   C   |    A    |  D  |  E  |    B    |    F    |  
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+   | p | q | r | q ^ r | p - > C | ¬ C | ¬ p | D - > E | A - > B |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+01.| V | V | V |   V   |    V    |  F  |  F  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+02.| V | V | F |   F   |    F    |  V  |  F  |    F    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+03.| V | V | D |   D   |    D    | ¬ D |  F  |    D    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|         
+04.| V | F | V |   F   |    F    |  V  |  F  |    F    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+05.| V | F | V |   F   |    F    |  V  |  F  |    F    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+06.| V | F | D |   F   |    F    |  V  |  F  |    F    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+07.| V | D | V |   D   |    D    | ¬ D |  F  |    D    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+08.| V | D | F |   F   |    F    |  V  |  F  |    F    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+09.| V | D1| D2|   D3  |    D3   | ¬D3 |  F  |    D3   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+10.| F | V | V |   V   |    V    |  F  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+11.| F | V | F |   F   |    V    |  V  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+12.| F | V | D |   D   |    V    | ¬ D |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+13.| F | F | V |   F   |    V    |  V  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+14.| F | F | F |   F   |    V    |  V  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+15.| F | F | D |   F   |    V    |  V  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+16.| F | D | V |   D   |    V    | ¬ D |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+17.| F | D | F |   F   |    V    |  V  |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+18.| F | D1| D2|   D3  |    V    | ¬D3 |  V  |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+19.| D | V | V |   V   |    V    |  F  | ¬ D |    V    |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+20.| D | V | F |   F   |   ¬ D   |  V  | ¬ D |   ¬ D   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+21.| D1| V | D2|   D2  |    D3   | ¬D2 | ¬D1 |    D4   |    D5   |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+22.| D | F | V |   F   |   ¬ D   |  V  | ¬ D |   ¬ D   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+23.| D | F | F |   F   |   ¬ D   |  V  | ¬ D |   ¬ D   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+24.| D1| F | D2|   F   |   ¬D1   |  V  | ¬D1 |   ¬D1   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+25.| D1| D2| V |   D2  |    D3   | ¬D2 | ¬D1 |    D4   |    D5   |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+26.| D1| D2| F |   F   |   ¬D1   |  V  | ¬D1 |   ¬D1   |    V    |
+   |---+---+---+-------+---------+-----+-----+---------+---------|
+27.| D1| D2| D3|   D4  |    D5   | ¬D4 | ¬D1 |    D6   |    D7   |
+   |-------------------------------------------------------------|
+
+   - Para Descobrir se a coluna F vai ser toda verdadeira ou apresentar alguns resulatdos falsos, faremos suposições para os D's em p, q e r:
+    I)Linha 21... D5=?
+        .)Fazendo D1=D2=V, vamos obter a linha 1, onde o resultado é V. Portanto, D5=V;        *Concluimos tambem que D3=D4=V*
+        .)Colocando D1=V e D2=F, teremos a linha 2, onde o resultado é V. Logo, D5=V;        *Concluimos tambem que D3=F e D4=V*
+        .)Fazendo D1=D2=F, vamos obter a linha 11, onde o resultado é V. Portanto, D5=V;        *Concluimos tambem que D3=D4=V*
+        .)Colocando D1=F e D2=V, teremos a linha 10, onde o resultado é V. Logo, D5=V;        *Concluimos tambem que D3=D4=V*
+
+        Como em todos os casos o D5 deu V, então podemos dizer que esse é realmente o resultado de D5.
+
+    II)Linha 25... D5=?
+        .)Fazendo D1=D2=V, vamos obter a linha 1, onde o resultado é V. Portanto, D5=V;        *Concluimos tambem que D3=D4=V*
+        .)Colocando D1=V e D2=F, teremos a linha 4, onde o resultado é V. Logo, D5=V;        *Concluimos tambem que D3=D4=F*
+        .)Fazendo D1=D2=F, vamos obter a linha 13, onde o resultado é V. Portanto, D5=V;        *Concluimos tambem que D3=D4=V*
+        .)Colocando D1=F e D2=V, teremos a linha 10, onde o resultado é V. Logo, D5=V;        *Concluimos tambem que D3=D4=V*
+
+        Como em todos os casos o D5 deu V, então podemos dizer que esse é realmente o resultado de D5.
+        
+    III)Linha 27... D7=?
+        .)Fazendo D1=D2=D3=V, vamos obter a linha 1, onde o resultado é V. Portanto, D7=V;        *Concluimos tambem que D4=D5=D6=V*
+        .)Colocando D1=D2=V e D3=F, teremos a linha 2, onde o resultado é V. Logo, D7=V;        *Concluimos tambem que D4=D5=D6=F*
+        .)Fazendo D1=D3=V e D2=F, vamos obter a linha 4, onde o resultado é V. Portanto, D7=V;        *Concluimos tambem que D4=D5=D6=F*
+        .)Colocando D1=V e D2=D3=F, teremos a linha 5, onde o resultado é V. Logo, D7=V;        *Concluimos tambem que D4=D5=D6=F*
+        .)Fazendo D1=F e D2=D3=V, vamos obter a linha 10, onde o resultado é V. Portanto, D7=V;        *Concluimos tambem que D4=D5=D6=V*
+        .)Colocando D1=D3=F e D2=V, teremos a linha 11, onde o resultado é V. Logo, D7=V;        *Concluimos tambem que D4=F e D5=D6=V*
+        .)Fazendo D1=D2=F e D3=V, vamos obter a linha 13, onde o resultado é V. Portanto, D7=V;        *Concluimos tambem que D4=F e D5=D6=V*
+        .)Colocando D1=D2=D3=F, teremos a linha 14, onde o resultado é V. Logo, D7=V;        *Concluimos tambem que D4=F e D5=D6=V*
+
+        Como em todos os casos o D7 deu V, então podemos dizer que esse é realmente o resultado de D7.
+
+    Depois de feito os testes, vemos que os resultados que faltavam (D5 nas linhas 21 e 25 e D7 na linha 27) sao correspondente a V. Logo, a coluna F é toda verdadeira, comprovando que A -> B é uma tautologia. Portanto A=>B.

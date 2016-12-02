@@ -1,0 +1,61 @@
+Problema de Post
+Autora: Dariany G. G. Diniz
+Data de início: 20/09/2016
+Data de conclusão: 26/09/2016
+
+.)Fazer a FND e a FNC para as seguintes TVs (tabelas verdades):
+
+A) |-----------|
+   | p | q | a |            I)FND                                       |   II)FNC
+   |---+---+---|                                                        |
+   | V | V | V |            (p ^ q)                                     |
+   |---+---+---|                                                        |
+   | V | F | V |            (p ^ ¬q)                                    |
+   |---+---+---|                                                        |
+   | F | V | V |            (¬p ^q)                                     |
+   |---+---+---|                                                        |
+   | F | F | F |                                                        |   (p v q)
+   |-----------|            Fórmula: (p ^ q)v(p ^ ¬q)v(¬p ^ q)          |   Fórmula: (p v q)
+                            F. Simp.: (p v q)                           |   F. Simp.: Não tem como simplificar mais.
+ 
+B) |-----------|
+   | p | q | b |            I)FND                                       |   II)FNC
+   |---+---+---|                                                        |
+   | V | V | V |            (p ^ q)                                     |
+   |---+---+---|                                                        |
+   | V | F | F |                                                        |   (¬p v q)
+   |---+---+---|                                                        |
+   | F | V | F |                                                        |   (p v ¬q)
+   |---+---+---|                                                        |
+   | F | F | F |                                                        |   (p v q)
+   |-----------|            Fórmula: (p ^ q)                            |   Fórmula: (¬p v q)^(p v ¬q)^(p v q)
+                            F. Simp.: Não tem como simplificar mais.    |   F. Simp.: (p ^ q)                       
+ 
+C) |-----------|
+   | p | q | c |            I)FND                                       |   II)FNC
+   |---+---+---|                                                        |
+   | V | V | F |                                                        |   (¬p v ¬q)
+   |---+---+---|                                                        |
+   | V | F | V |            (p ^ ¬q)                                    |
+   |---+---+---|                                                        |
+   | F | V | V |            (¬p ^q)                                     |
+   |---+---+---|                                                        |
+   | F | F | F |                                                        |   (p v ¬q)
+   |-----------|            Fórmula: (p ^ ¬q)v(¬p ^ q)                  |   Fórmula: (¬p v ¬q)^(p v ¬q)
+                            F. Simp.: p (+) q                           |   F. Simp.: p (+) q                       
+ 
+D) |-----------|
+   | p | q | d |            I)FND                                       |   II)FNC
+   |---+---+---|                                                        |
+   | V | V | F |                                                        |   (¬p v ¬q)
+   |---+---+---|                                                        |
+   | V | F | V |            (p ^ ¬q)                                    |
+   |---+---+---|                                                        |
+   | F | V | F |                                                        |   (p v ¬q)
+   |---+---+---|                                                        |
+   | F | F | F |                                                        |   (p v q)
+   |-----------|            Fórmula: (p ^ ¬q)                           |   Fórmula: (¬p v ¬q)^(p v ¬q)^(p v q)
+                            F. Simp.: Não tem como simplificar mais.    |   F. Simp.: (p ^ ¬q)                      
+
+Obs.: (+) foi usado como o  símbolo do ou-exclusivo.
+

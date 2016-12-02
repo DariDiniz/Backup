@@ -1,0 +1,18 @@
+Teste da Definicao do OU Exclusivo
+Nome: Dariany Diniz
+Data: 05/09/2016
+
+Prove que: (p v q) ^ ¬ (p ^ q) <=> ¬ (p <-> q (p v q) ^ ¬ (p ^ q)
+
+(p v q) ^ ¬ (p ^ q).....Leis de D' Morgan (Regra 09)
+(p v q) ^ (¬ p v ¬ q).....Distribuitivas (Conj./Disj.) (Regra 07)
+((¬ p v ¬ q) ^ p) v ((¬ p v ¬ q) ^ q).....Distribuitivas (Conj./Disj.) (Regra 07)
+((p ^ ¬p) v (p ^ ¬ q)) v ((q ^ ¬ p) v (q ^ ¬ q)).....Contra-Tautologia (Regra 12)
+(F v (p ^ ¬ q)) v ((q ^ ¬ p) v F).....Propriedades de F (Regra 05)
+(p ^ ¬ q) v (q ^ ¬ p).....Negacao (Regra 13)
+¬ (¬ ((p ^ ¬ q) v (q ^ ¬ p))).....Leis de D' Morgan (Regra 09)
+¬ (¬ (p ^ ¬ q) ^ ¬ (q ^ ¬ p)).....Leis de D' Morgan (Regra 09)
+¬ ((¬ p v q) ^ (¬ qv p)).....Definicao de Bicondicional (Regra 11)
+¬ (p <-> q)
+¬ (p <-> q) <=> ¬ (p <-> q)
+c.q.d.
